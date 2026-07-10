@@ -1135,3 +1135,102 @@ body {
     /* Stacks links beautifully on compact mobile screens */
   }
 }
+
+/* ==========================================
+   MOBILE RESPONSIVE TABLE TRANSFORMATION
+   ========================================== */
+@media (max-width: 768px) {
+
+  /* 1. Turn the entire table structure into a block/flex layout */
+  .subscription-table,
+  .subscription-table thead,
+  .subscription-table tbody,
+  .subscription-table th,
+  .subscription-table tr,
+  .subscription-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 2. Hide the desktop table header completely */
+  .subscription-table thead {
+    display: none;
+  }
+
+  /* 3. Turn each row into a standalone card container */
+  .table-row {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 16px;
+    position: relative;
+    box-shadow: var(--card-shadow);
+  }
+
+  .table-row:hover {
+    background-color: var(--bg-card) !important;
+    /* Disables desktop hover tracking tint */
+  }
+
+  /* 4. Format the table cells to look like stacked row details */
+  .subscription-table td {
+    padding: 8px 0;
+    border: none;
+    white-space: normal;
+    /* Allows text wrapping if service names are long */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  /* 5. Custom layout adjustments for the Name/Avatar Row */
+  .subscription-table td.td-profile {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .service-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .service-name-text {
+    font-size: 1rem;
+  }
+
+  /* 6. Use CSS generation to add labels back dynamically for mobile context */
+  .subscription-table td:not(.td-profile):not(:last-child)::before {
+    content: attr(data-label);
+    /* Pulls desktop label names down dynamically */
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* 7. Adjustments for the alignment of badges and indicators on mobile */
+  .status-badge {
+    margin-left: auto;
+    /* Pushes the badge perfectly to the right */
+  }
+
+  .impact-meter-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 4px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-color);
+  }
+
+  .subscription-table td:last-child {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
