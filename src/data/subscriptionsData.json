@@ -1,0 +1,60 @@
+[
+  {
+    "id": "sub_01",
+    "name": "Netflix",
+    "category": "Entertainment",
+    "cost": 8.99,
+    "currency": "USD",
+    "billingCycle": "monthly",
+    "nextBillingDate": "2026-06-18",
+    "status": "active",
+    "usageFrequency": "high",
+    "iconUrl": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netflix.svg",
+    "legacyAction": "delete",
+    "OrderLYImpactScore": 2
+  },
+  {
+    "id": "sub_02",
+    "name": "ChatGPT Plus",
+    "category": "Work & Productivity",
+    "cost": 14.99,
+    "currency": "USD",
+    "billingCycle": "monthly",
+    "nextBillingDate": "2026-06-22",
+    "status": "active",
+    "usageFrequency": "low",
+    "iconUrl": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/openai.svg",
+    "legacyAction": "transfer",
+    "legacyContact": "design-partner@example.com",
+    "OrderLYImpactScore": 8
+  },
+  {
+    "id": "sub_03",
+    "name": "PlayStation Plus",
+    "category": "Gaming",
+    "cost": 10.99,
+    "currency": "USD",
+    "billingCycle": "yearly",
+    "nextBillingDate": "2026-11-05",
+    "status": "paused",
+    "usageFrequency": "none",
+    "iconUrl": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/playstation.svg",
+    "legacyAction": "delete",
+    "OrderLYImpactScore": 5
+  },
+  {
+    "id": "sub_04",
+    "name": "Google One Storage",
+    "category": "Cloud & Backup",
+    "cost": 1.99,
+    "currency": "USD",
+    "billingCycle": "monthly",
+    "nextBillingDate": "2026-06-12",
+    "status": "active",
+    "usageFrequency": "high",
+    "iconUrl": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg",
+    "legacyAction": "vault_archive",
+    "legacyContact": "family-archive@example.com",
+    "OrderLYImpactScore": 9
+  }
+]

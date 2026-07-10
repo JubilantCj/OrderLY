@@ -1,0 +1,1137 @@
+/* ==========================================
+   THEME CONFIGURATION VARIABLES
+   ========================================== */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --table-head-bg: #f8fafc;
+  --table-row-hover: #f8fafc;
+  --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+/* Dynamic Dark Mode Override - NOW TRUE OBSIDIAN BLACK */
+.dark-theme {
+  --bg-main: #000000;
+  /* Pure Pitch Black for the ultimate cinematic depth */
+  --bg-card: #0a0a0a;
+  /* Ultra-dark slate gray for cards so they subtly lift off the black */
+  --text-primary: #ffffff;
+  /* Crisp, pure white headings */
+  --text-secondary: #a1a1aa;
+  /* Soft silver-gray for clean descriptions */
+  --border-color: #1c1c1e;
+  /* Clean, razor-thin borders (Apple Style) */
+  --table-head-bg: #0f0f10;
+  /* Dark unified table header */
+  --table-row-hover: #121214;
+  /* Sleek line tracking highlight */
+  --card-shadow: 0 0 0 1px #1c1c1e;
+  /* Subtle border glow instead of a heavy shadow */
+}
+
+/* Apply Variables Globally across the core shell elements */
+body,
+.app-container,
+.main-content {
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.content-header h1 {
+  color: var(--text-primary);
+}
+
+.content-header p {
+  color: var(--text-secondary);
+}
+
+/* Update Card Styles to listen to variables */
+.stat-card,
+.table-container,
+.vault-form-container,
+.settings-card,
+.demo-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--card-shadow) !important;
+  color: var(--text-primary) !important;
+}
+
+.stat-title {
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  color: var(--text-primary);
+}
+
+.table-header-actions h3,
+.service-name-text,
+.td-cost {
+  color: var(--text-primary) !important;
+}
+
+.table-subtitle,
+.subscription-table th,
+.td-date,
+.field-instruction {
+  color: var(--text-secondary) !important;
+}
+
+.subscription-table th {
+  background-color: var(--table-head-bg) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.table-row {
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.table-row:hover {
+  background-color: var(--table-row-hover) !important;
+}
+
+.custom-radio-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.text-field-input {
+  background-color: var(--bg-main) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.progress-step {
+  color: var(--text-secondary);
+}
+
+body {
+  margin: 0;
+  background-color: #f8fafc;
+  /* Crisp, clean off-white slate background */
+  color: #1e293b;
+  /* Deep slate for maximum text readability */
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Main Layout Wrapper */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  /* Perfectly offsets the Sidebar width */
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #f8fafc;
+}
+
+.content-header h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  /* Darkest slate for bold headings */
+  margin: 0 0 6px 0;
+  letter-spacing: -0.03em;
+}
+
+.content-header p {
+  color: #64748b;
+  /* Soft gray-blue for helper text */
+  margin: 0 0 32px 0;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   SIDEBAR CONTAINER STYLE
+   ========================================== */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0f172a;
+  /* Rich, elegant deep dark navy/slate */
+  border-right: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* 1. Logo Section Styling */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  margin-bottom: 32px;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #0ed56d, #06b6d4);
+  /* Electric Mint to Cyan gradient */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+  /* Subtle glow effect */
+}
+
+.sidebar-logo h2 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+/* 2. Navigation Menu Links */
+.sidebar-nav {
+  flex: 1;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  color: #94a3b8;
+  /* Muted slate-blue links */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  /* Smooth Premium Hover Transition */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State Animation */
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+  padding-left: 22px;
+  /* Smooth micro-slide forward */
+}
+
+/* Active State Design (Clean & Vibrant) */
+.nav-item.active {
+  background-color: #1e293b;
+  /* Stands out inside the dark panel */
+  color: #06b6d4;
+  /* Crisp Cyan accent color */
+  font-weight: 600;
+  border-left: 4px solid #06b6d4;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* 3. Bottom User Profile Section */
+.sidebar-footer {
+  border-top: 1px solid #1e293b;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #334155;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.user-name {
+  color: #f8fafc;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.user-role {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  /* Gentle soft red alert background */
+  color: #f87171;
+  /* Soft red icon */
+}
+
+/* ==========================================
+   TEMPORARY CARDS GRID LAYOUT
+   ========================================== */
+.dashboard-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.demo-card {
+  background-color: #ffffff;
+  /* Pure white cards sitting on the off-white background */
+  border: 1px solid #e2e8f0;
+  /* Crisp, clean borders */
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 150px;
+  color: #475569;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+  /* Soft shadow for depth */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Premium Card Hover Interaction */
+.demo-card:hover {
+  transform: translateY(-4px);
+  /* Gently lifts card upwards */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  /* Soft, luxurious deep shadow */
+}
+
+/* ==========================================
+   RESPONSIVENESS (Mobile Viewports)
+   ========================================== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: 65px;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    /* Snaps beautifully to mobile tab-bar layout */
+    top: auto;
+    left: 0;
+    border-right: none;
+    border-top: 1px solid #1e293b;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar-logo,
+  .user-info,
+  .user-role,
+  .sidebar-footer {
+    display: none;
+    /* Hide profile text on mobile screens to save layout space */
+  }
+
+  .sidebar-footer {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .sidebar-nav {
+    width: 100%;
+  }
+
+  .sidebar-nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .nav-item {
+    padding: 10px;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.725rem;
+  }
+
+  .nav-item:hover {
+    padding-left: 10px;
+    /* Disables side animation on smartphone configurations */
+  }
+
+  .nav-item.active {
+    border-left: none;
+    border-bottom: 3.5px solid #06b6d4;
+    /* Custom active highlight line under mobile text */
+    background-color: transparent;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 24px 16px 90px 16px;
+    /* Bottom spacing buffer so elements clear mobile tab menu */
+  }
+}
+
+/* ==========================================
+   ANALYTICS GRID & PREMIUM STAT CARDS
+   ========================================== */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  /* Smooth rounded professional edges */
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Premium Hover Physics Transition */
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+/* Elite Micro-interaction Hover effect */
+.stat-card:hover {
+  transform: translateY(-6px);
+  /* Snappy upward pop with easing spring weight */
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+}
+
+.stat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  /* Clean neutral grey-blue */
+  letter-spacing: 0.02em;
+}
+
+/* Icon Container Tint Frameworks */
+.stat-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue-tint {
+  background-color: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+}
+
+.green-tint {
+  background-color: rgba(14, 213, 109, 0.1);
+  color: #0ed56d;
+}
+
+.orange-tint {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.stat-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Value Typography Styling */
+.stat-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.stat-value-sub {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.stat-footer {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.text-green {
+  color: #0ed56d;
+}
+
+.text-muted {
+  color: #64748b;
+}
+
+/* Interactive Warning/Safe Pills */
+.status-pill {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.pill-warning {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.pill-safe {
+  background-color: rgba(14, 213, 109, 0.1);
+  color: #0ed56d;
+  border: 1px solid rgba(14, 213, 109, 0.2);
+}
+
+/* ==========================================
+   INTERACTIVE DATA TABLE COMPONENT STYLE
+   ========================================== */
+.table-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  margin-top: 8px;
+}
+
+.table-header-actions {
+  margin-bottom: 20px;
+}
+
+.table-header-actions h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.table-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Scroll Container for absolute desktop/mobile responsiveness */
+.responsive-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  /* Ensures smooth horizontal swiping on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.subscription-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Prevents awkward default spacing double borders */
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+/* Table Header Formatting */
+.subscription-table th {
+  background-color: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+/* Table Body Row Formatting */
+.table-row {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+/* High-End Micro-Interaction Row Highlight */
+.table-row:hover {
+  background-color: #f8fafc;
+  /* Subtle light tracking tint when tracking cursor line */
+}
+
+.subscription-table td {
+  padding: 16px;
+  color: #334155;
+  vertical-align: middle;
+  white-space: nowrap;
+  /* Keeps records organized perfectly on single baselines */
+}
+
+/* Profile / Service Avatar alignment combo */
+.td-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+  border: 1px solid #e2e8f0;
+  padding: 4px;
+  background-color: #f8fafc;
+}
+
+.service-name-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Elegant Text tags & formatting */
+.category-tag {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.td-cost {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.td-cycle {
+  text-transform: capitalize;
+}
+
+.td-date {
+  color: #64748b;
+}
+
+/* Professional State Status Badges */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.badge-active {
+  background-color: rgba(14, 213, 109, 0.12);
+  color: #16a34a;
+}
+
+.badge-paused {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Custom Dynamic Impact Mini-Meter Component */
+.impact-meter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 130px;
+}
+
+.impact-meter-bar {
+  height: 6px;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  /* Pre-wired for future animation states */
+}
+
+.impact-text {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* Premium Page Transition Animation */
+.fade-in {
+  animation: fadeInEffect 0.4s ease-out forwards;
+}
+
+@keyframes fadeInEffect {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    /* Gently slides up while fading in */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   DIGITAL LEGACY WIZARD & LAYOUT SIDEBAR
+   ========================================== */
+.vault-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  /* Splitting the layout into form and side preview card */
+  gap: 40px;
+  align-items: start;
+}
+
+.vault-form-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+}
+
+/* Multi-Step Wizard Progress Indicators */
+.wizard-progress-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 16px;
+}
+
+.progress-step {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  flex: 1;
+  text-align: center;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.progress-step.step-active {
+  color: #06b6d4;
+  /* Crisp teal highlight for completed step lines */
+  border-bottom: 2px solid #06b6d4;
+}
+
+/* Custom Interactive Selection Radio Grid Cards */
+.radio-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.custom-radio-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.custom-radio-card:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.custom-radio-card.radio-selected {
+  border-color: #06b6d4;
+  background-color: rgba(6, 182, 212, 0.02);
+  /* Very faint soft layout background tint */
+}
+
+/* Custom Input Field Styling */
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.text-field-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.text-field-input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+/* Wizard Button Control Bars */
+.wizard-button-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+}
+
+.primary-action-btn,
+.secondary-action-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.primary-action-btn {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.primary-action-btn:hover {
+  background-color: #1e293b;
+}
+
+.secondary-action-btn {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.secondary-action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.success-green-btn {
+  background-color: #16a34a;
+}
+
+.success-green-btn:hover {
+  background-color: #15803d;
+}
+
+/* Right Column Live Preview Floating Manifest Card */
+.vault-preview-sidebar {
+  position: sticky;
+  top: 40px;
+}
+
+.preview-sticky-card {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  /* Rich midnight aesthetic */
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1);
+  text-align: center;
+}
+
+.badge-preview-tag {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: #06b6d4;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.preview-graphic-shield {
+  font-size: 2.5rem;
+  margin: 16px 0 8px 0;
+}
+
+.preview-sticky-card h3 {
+  font-size: 1.1rem;
+  margin: 0 0 24px 0;
+  color: #ffffff;
+}
+
+.manifest-item {
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 0;
+}
+
+.manifest-item:last-child {
+  border: none;
+}
+
+.manifest-item label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.manifest-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.sub-email-text {
+  font-size: 0.8rem;
+  color: #64748b;
+  display: block;
+}
+
+/* --- MOBILE VAULT RESPONSIVE DESIGN RE-GRIDDING --- */
+@media (max-width: 992px) {
+  .vault-page-layout {
+    grid-template-columns: 1fr;
+    /* Form maps to full screen stacked over live card view on mobile devices */
+  }
+}
+
+/* ==========================================
+   SETTINGS VIEW COMPONENT STYLES
+   ========================================== */
+.settings-grid-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-card {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: var(--bg-card);
+}
+
+.settings-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.field-instruction {
+  font-size: 0.85rem;
+  margin: 0 0 20px 0;
+}
+
+/* Theme Button Group Customizer layout */
+.theme-toggle-row {
+  display: flex;
+  gap: 12px;
+}
+
+.theme-select-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.theme-select-btn:hover {
+  border-color: #06b6d4;
+}
+
+.theme-btn-active {
+  background-color: #06b6d4 !important;
+  color: #ffffff !important;
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+}
+
+/* Notification layout rows and Toggle styling */
+.toggle-setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-text-lbl span {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.toggle-text-lbl small {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* Custom Checkbox Toggle Look */
+.ios-toggle-switch {
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  background-color: var(--border-color);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ios-toggle-switch:checked {
+  background-color: #0ed56d;
+  /* Clean vibrant switch green */
+}
+
+.ios-toggle-switch::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s;
+}
+
+.ios-toggle-switch:checked::before {
+  transform: translateX(20px);
+}
+
+/* ==========================================
+   DEVELOPER PROFILE CARD & SOCIAL PORTALS
+   ========================================== */
+.creator-profile-card {
+  border: 1px dashed var(--border-color) !important;
+  /* Elegant dashed border to distinguish it */
+  background-color: var(--bg-card);
+}
+
+.creator-links-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Base Social Action Blocks */
+.social-portal-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-main);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--text-primary);
+}
+
+.social-text-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.social-handle {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+.link-arrow-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+/* Premium Custom Hover Effects per Brand */
+.social-portal-link:hover {
+  transform: translateY(-3px);
+}
+
+/* GitHub Hover Brand Glow */
+.github-btn-style:hover {
+  border-color: #24292e;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark-theme .github-btn-style:hover {
+  border-color: #ffffff;
+  background-color: #111;
+}
+
+/* Twitter / X Hover Brand Glow */
+.twitter-btn-style:hover {
+  border-color: #1da1f2;
+  box-shadow: 0 10px 20px rgba(29, 161, 242, 0.1);
+}
+
+.social-portal-link:hover .link-arrow-icon {
+  transform: translate(2px, -2px);
+  /* Beautiful tiny diagnostic arrow kick on hover */
+  opacity: 1;
+  color: var(--text-primary);
+}
+
+@media (max-width: 576px) {
+  .creator-links-row {
+    grid-template-columns: 1fr;
+    /* Stacks links beautifully on compact mobile screens */
+  }
+}
