@@ -39,6 +39,7 @@ function App() {
            CONDITION 1: IF THE ACTIVE PAGE IS DASHBOARD
            ========================================== */}
         {activePage === 'dashboard' && (
+          <>
           <div className="fade-in">
             <header className="content-header">
               <h1>Dashboard Overview</h1>
@@ -79,12 +80,14 @@ function App() {
               </div>
             </div>
           </div>
+          </>
         )}
 
         {/* ==========================================
            CONDITION 2: IF THE ACTIVE PAGE IS SUBSCRIPTIONS
            ========================================== */}
         {activePage === 'subscriptions' && (
+          <>
   <div className="fade-in">
     <header className="content-header">
       <h1>Subscription Ledger</h1>
@@ -154,7 +157,8 @@ function App() {
       </div>
     </div>
   </div>
-)}
+          </> 
+        )}
 
         {/* ==========================================
    CONDITION 3: DIGITAL LEGACY VAULT WIZARD
